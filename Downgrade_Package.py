@@ -1,5 +1,6 @@
 import subprocess
 import sys
+import numpy
 import re
 from packaging import version
 
@@ -72,3 +73,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    for i in 10:
+        print(i)
+        print("存储到分支new中")
