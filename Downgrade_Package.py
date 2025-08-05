@@ -73,7 +73,11 @@ def main():
 
 if __name__ == "__main__":
     main()
+<<<<<<< HEAD
 
     for i in 10:
         print(i)
         print("存储到分支new中")
+=======
+    print("修改一些东西")
+>>>>>>> master
