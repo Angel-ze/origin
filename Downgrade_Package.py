@@ -70,40 +70,6 @@ def main():
     
     # 执行降级
     downgrade_package(package_name, target_version)
-    def downgrade_packages_from_json(json_file):
-        """
-        遍历JSON文件中的各个包并降级到指定版本。
-        JSON文件格式示例:
-        {
-            "package1": "1.2.3",
-            "package2": "4.5.6"
-        }
-        """
-        try:
-            with open(json_file, 'r', encoding='utf-8') as f:
-                packages = json.load(f)
-            for pkg, ver in packages.items():
-                print(f"\n处理包: {pkg}, 目标版本: {ver}")
-                current_version = get_installed_version(pkg)
-                if not current_version:
-                    print(f"❌ 未找到已安装的 {pkg} 包")
-                    continue
-                print(f"当前安装版本: {current_version}")
-                try:
-                    if version.parse(current_version) == version.parse(ver):
-                        print("✅ 当前版本已是目标版本，无需操作")
-                        continue
-                    elif version.parse(current_version) < version.parse(ver):
-                        print("⚠️ 当前版本低于目标版本，这是升级操作！")
-                        confirm = input(f"{pkg}: 是否继续？(y/n): ").lower()
-                        if confirm != 'y':
-                            print("操作已取消")
-                            continue
-                except Exception as e:
-                    print(f"版本解析错误: {e}")
-                    continue
-                downgrade_package(pkg, ver)
-        except Exception as e:
-            print(f"读取或处理JSON文件失败: {e}")
+
 if __name__ == "__main__":
     main()
