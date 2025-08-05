@@ -3,6 +3,7 @@ import sys
 import numpy
 import re
 from packaging import version
+import json
 
 def get_installed_version(package_name):
     """获取当前安装的包版本"""
@@ -73,11 +74,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-<<<<<<< HEAD
-
-    for i in 10:
-        print(i)
-        print("存储到分支new中")
-=======
-    print("修改一些东西")
->>>>>>> master
