@@ -9,6 +9,4 @@ from functools import lru_cache
 
 # print(add(2, 3))
 
-class abb
-for i in 10:
-    print("11")
+
